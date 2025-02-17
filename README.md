@@ -1,3 +1,44 @@
+Core components:
+Game STATE:
+- i,j grid
+    > Tile:
+        + letter
+        + isActive (e.g. Can this )
+        + neighbors
+
+- Tile Tree
+    + For each tile:
+        ++ DAG Tree of neighbors with context of parents
+        ++ Depth (length of word)
+
+Game VIEW:
+- display the grid
+- display the tree
+e.g. 
+P O I
+T F D
+E U Q
+
+All possible words for P with d=4:
+P
+|_  O
+    |_  T
+        |_E
+        |_U
+        |_F
+    |_  F       <-- At this level we need to know that P and O are already used
+        |_T
+        |_E
+        |_U
+        |_Q
+        |_D
+        |_I
+    |_  D
+        |_IFUQ
+    |_  I_FD
+|_  F
+    |_  * - 
+|_  T
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
