@@ -1,4 +1,5 @@
-import GameStateDisplay from "./components/gameState";
+"use server";
+import GameStateDisplay from "./components/GameStateDisplay";
 
 export default async function Home() {
   return (
